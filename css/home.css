@@ -1,0 +1,1076 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    text-align: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+@font-face {
+    font-family: "mini";
+    src: url(../font/mini.TTF);
+}
+
+/* loading start */
+.loading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #303744;
+}
+.loading .moon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../images/loading_moon.png) no-repeat center top;
+    background-size: 100% auto;
+}
+.loading .progress {
+    position: absolute;
+    font-family: 'mini';
+    font-size: 25px;
+    z-index: 9;
+    text-align: center;
+    top: 20%;
+    left: 0;
+    right: 0;
+}
+.loading .word {
+    font-size: 35px;
+}
+.loading .word span{
+    font-size: 55px;
+}
+.loading .cityBack {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: url(../images/loading_cityBack.png) no-repeat center bottom;
+    background-size: 100% 100%;
+}
+.loading .cityBack .window {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    /*background-color: #000;*/
+    /*box-shadow: 0 0 10px #000;*/
+    background-color: #9c9e59;
+    box-shadow: 0 0 10px #9c9e59;
+}
+.loading .cityBack .window:nth-child(1) {
+    top: 30%;
+    left: 5%;
+}
+.loading .cityBack .window:nth-child(2) {
+    top: 45%;
+    left: 5%;
+}
+.loading .cityBack .window:nth-child(3) {
+    top: 5%;
+    left: 23%;
+}
+.loading .cityBack .window:nth-child(4) {
+    top: 5%;
+    left: 36%;
+}
+.loading .cityBack .window:nth-child(5) {
+    top: 18%;
+    left: 23%;
+}
+.loading .cityBack .window:nth-child(6) {
+    top: 18%;
+    left: 36%;
+}
+.loading .cityBack .window:nth-child(7) {
+    top: 24%;
+    left: 60%;
+}
+.loading .cityFront {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: url(../images/loading_cityFront.png) no-repeat center bottom;
+    background-size: 100% 100%;
+}
+.loading .cityFront .window {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    /*background-color: #000;*/
+    /*box-shadow: 0 0 10px #000;*/
+    background-color: #fafb86;
+    box-shadow: 0 0 10px #fafb86;
+}
+.loading .cityFront .window:nth-child(1) {
+    top: 27%;
+    left: 20%;
+}
+.loading .cityFront .window:nth-child(2) {
+    top: 27%;
+    left: 29%;
+}
+.loading .cityFront .window:nth-child(3) {
+    top: 38%;
+    left: 29%;
+}
+.loading .cityFront .window:nth-child(4) {
+    top: 49%;
+    left: 20%;
+}
+.loading .cityFront .window:nth-child(5) {
+    top: 60%;
+    left: 29%;
+}
+
+.loading .cityFront .window:nth-child(6) {
+    top: 37%;
+    left: 51%;
+}
+.loading .cityFront .window:nth-child(7) {
+    top: 37%;
+    left: 58%;
+}
+.loading .cityFront .window:nth-child(8) {
+    top: 47%;
+    left: 58%;
+}
+.loading .cityFront .window:nth-child(9) {
+    top: 57%;
+    left: 51%;
+}
+.loading .cityFront .window:nth-child(10) {
+    top: 5%;
+    left: 74%;
+}
+.loading .cityFront .window:nth-child(11) {
+    top: 15%;
+    left: 82.2%;
+}
+.loading .cityFront .window:nth-child(12) {
+    top: 5%;
+    left: 90%;
+}
+.loading .cityFront .window:nth-child(13) {
+    top: 25%;
+    left: 74%;
+}
+.loading .cityFront .window:nth-child(14) {
+    top: 25%;
+    left: 90%;
+}
+.loading .cityFront .window:nth-child(15) {
+    top: 35%;
+    left: 90%;
+}
+.loading .cityFront .window:nth-child(16) {
+    top: 45%;
+    left: 82.2%;
+}
+.loading .cityFront .window:nth-child(17) {
+    top: 55%;
+    left: 74%;
+}
+.loading .cityFront .window:nth-child(18) {
+    top: 55%;
+    left: 90%;
+}
+/* loading end */
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+/* music start */
+.music {
+    width: 15%;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    animation: buttonFloat 3s infinite;
+    -moz-animation: buttonFloat 3s infinite;
+    -webkit-animation: buttonFloat 3s infinite;
+    z-index: 999;
+}
+.music img, .backToHome img {
+    position: absolute;
+    width: 100%;
+}
+.music .mute {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.music .mute.active {
+    opacity: 1;
+}
+/* music end */
+
+/*backToHome start*/
+.backToHome {
+    display: none;
+    width: 15%;
+    position: absolute;
+    right: 25%;
+    /*left: 5%;*/
+    top: 2%;
+    z-index: 999;
+}
+.backToHome .pressed {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.backToHome .pressed.active {
+    opacity: 1;
+}
+/*backToHome end*/
+
+/*home start*/
+
+/* title start */
+.home .title {
+    font-family: "mini";
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* title end */
+.home {
+    /*display: none;*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(../images/home_background.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/*mooncake start*/
+.home .mooncake {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    
+}
+.home .mooncakeBefore {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/home_mooncake.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncakeAfter {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/home_mooncake_cut.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncake .rabbit {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.home .mooncake .rabbit:nth-child(3) {
+    background: url(../images/home_rabbit1.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncake .rabbit:nth-child(4) {
+    background: url(../images/home_rabbit2.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncake .rabbit:nth-child(5) {
+    background: url(../images/home_rabbit3.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncake .rabbit:nth-child(6) {
+    background: url(../images/home_rabbit4.png) no-repeat center center;
+    background-size: auto 90%;
+}
+.home .mooncake .rabbit:nth-child(7) {
+    background: url(../images/home_rabbit5.png) no-repeat center center;
+    background-size: auto 90%;
+}
+/*mooncake end*/
+
+.home .footer {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 13px;
+    color: #bdbdbd;
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+}
+
+/*play start*/
+.play {
+    display: none;
+    height: 150px;
+    width: 150px;
+    /*background-image: url(../images/home_play.png);
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;*/
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    animation: buttonFloat 2s infinite;
+    -moz-animation: buttonFloat 2s infinite;
+    -webkit-animation: buttonFloat 2s infinite;
+}
+@keyframes buttonFloat {0%,100% {transform: translateY(0);} 50%{transform: translateY(6px);}}
+@-moz-keyframes buttonFloat {0%,100% {-moz-transform: translateY(0);} 50%{-moz-transform: translateY(6px);}}
+@-webkit-keyframes buttonFloat {0%,100% {-webkit-transform: translateY(0);} 50%{-webkit-transform: translateY(6px);}}
+.play img {
+    width: 100%;
+    position: absolute;
+}
+.play .clicked {
+    opacity: 0;
+}
+/*play end*/
+
+/*home end*/
+
+/* bite start */
+.bite {
+    /*display: none;*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(../images/bite_background.png) no-repeat center center;
+    background-size: cover;
+}
+.bite .backLight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: url(../images/bite_backLight.png) no-repeat center center;
+    background-size: cover;
+    animation: backLight 2.5s infinite;
+    -moz-animation: backLight 2.5s infinite;
+    -webkit-animation: backLight 2.5s infinite;
+}
+@keyframes backLight {0%,100% {opacity: 0.3}50% {opacity: 1}}
+@-moz-keyframes backLight {0%,100% {opacity: 0.3}50% {opacity: 1}}
+@-webkit-keyframes backLight {0%,100% {opacity: 0.3}50% {opacity: 1}}
+.rocket {
+    width: 36px;
+    height: 94px;
+    background: url(../images/bite_rocket.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    animation: rocketUpDown 3.5s infinite, rocketLeftRight 2.5s infinite;
+    -moz-animation: rocketUpDown 3.5s infinite, rocketLeftRight 2.5s infinite;
+    -webkit-animation: rocketUpDown 3.5s infinite, rocketLeftRight 2.5s infinite;
+}
+@keyframes rocketLeftRight {0%,100% {right: 5%}50% {right: 10%}}
+@-moz-keyframes rocketLeftRight {0%,100% {right: 5%}50% {right: 10%}}
+@-webkit-keyframes rocketLeftRight {0%,100% {right: 5%}50% {right: 10%}}
+
+@keyframes rocketUpDown {0%,100% {transform: translateY(0);}50% {transform: translateY(-20px);}}
+@-moz-keyframes rocketUpDown {0%,100% {-moz-transform: translateY(0);}50% {-moz-transform: translateY(-20px);}}
+@-webkit-keyframes rocketUpDown {0%,100% {-webkit-transform: translateY(0);}50% {-webkit-transform: translateY(-20px);}}
+
+.bite .mooncake {
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+    top: 38%;
+    animation: rocketUpDown 2.5s infinite;
+    -moz-animation: rocketUpDown 2.5s infinite;
+    -webkit-animation: rocketUpDown 2.5s infinite;
+}
+.bite .frontLight {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url(../images/bite_frontLight.png) no-repeat center center;
+    background-size: cover;
+    top: 35%;
+    animation: backLight 2.5s infinite;
+    -moz-animation: backLight 2.5s infinite;
+    -webkit-animation: backLight 2.5s infinite;
+    /*background-color: red;*/
+}
+.bite .title {
+    font-family: 'mini';
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+}
+.bite .card {
+    display: none;
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+    background-color: #fff;
+    box-shadow: 0 0 0px 15px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    z-index: 2;
+}
+.bite .card .rabbit {
+    width: 200px;
+    height: 293px;
+    background: url(../images/bite_rabbit.png) no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -65px;
+    z-index: -1;
+}
+.bite .card span {
+    width: 100%;
+    position: absolute;
+    top: 225px;
+    padding: 5%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-indent: 2em;
+}
+@media screen and (max-width:330px) {
+    .bite .card span {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width:331px) and (max-width:375px) {
+    .bite .card span {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width:376px) and (max-width:414px) {
+    .bite .card span {
+        font-size: 23px;
+    }
+}
+@media screen and (min-width:415px) {
+    .bite .card span {
+        font-size: 27px;
+    }
+}
+.bite .card .makeIt {
+    position: absolute;
+    left: -5px;
+    bottom: -20px;
+    height: 50px;
+    width: 50px;
+    background: url(../images/bite_makeIt.png) no-repeat;
+    background-size: 100% 100%;
+}
+.bite .card .reDo {
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    height: 50px;
+    width: 50px;
+    background: url(../images/bite_redo_shadow.png) no-repeat;
+    background-size: 100% 100%;
+}
+.bite .card .tip div {
+    font-family: 'mini';
+    position: absolute;
+    display: inline-block;
+    bottom: -40px;
+}
+.bite .card .tip div:nth-child(1){
+    left: -10px;
+}
+.bite .card .tip div:nth-child(2){
+    right: -10px;
+}
+@media screen and (min-width:400px) {
+    .bite .card .makeIt, .bite .card .reDo {
+        height: 75px;
+        width: 75px;
+    }
+    .bite .card .tip div:nth-child(1){
+        font-size: 20px;
+    }
+    .bite .card .tip div:nth-child(2){
+        font-size: 20px;
+    }
+}
+.bite .card .reDo img {
+    width: 92%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.bite .card .reDo img.active {
+    transform: rotate(-90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+/* bite end */
+
+/* make start */
+.make {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(../images/make_background.png) no-repeat center top;
+    background-size: 100% auto;
+    overflow: hidden;
+}
+.make .backLight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../images/make_backLight.png) no-repeat center center;
+    background-size: 100% 100%;
+    z-index: 2;
+    animation: backLight 3s infinite;
+    -moz-animation: backLight 3s infinite;
+    -webkit-animation: backLight 3s infinite;
+}
+.make .rabbit {
+    position: absolute;
+    bottom: 30%;
+    height: 60%;
+    width: 100%;
+    z-index: 3;
+    background: url(../images/make_rabbit.png) no-repeat center center;
+    background-size: auto 100%;
+}
+.make .bottom {
+    position: absolute;
+    bottom: -5px;
+    height: 35%;
+    width: 100%;
+    left: 0;
+    background: url(../images/make_background_bottom.png) no-repeat center center;
+    background-size: 100% 100%;
+    z-index: 5;
+}
+
+/* 箭头 */
+.make .leftArrow {
+    position: absolute;
+    left: 3%;
+    top: 60%;
+    width: 50px;
+    height: 68px;
+    background: url(../images/make_arraw.png) no-repeat center center;
+    background-size: 100% 100%;
+    animation: leftArrow 3s infinite;
+    -moz-animation: leftArrow 3s infinite;
+    -webkit-animation: leftArrow 3s infinite;
+    z-index: 8;
+}
+@keyframes leftArrow {0%,100% {transform: translateX(0)}50% {transform: translateX(-10px)}}
+@-moz-keyframes leftArrow {0%,100% {-moz-transform: translateX(0)}50% {-moz-transform: translateX(-10px)}}
+@-webkit-keyframes leftArrow {0%,100% {-webkit-transform: translateX(0)}50% {-webkit-transform: translateX(-10px)}}
+
+.make .rightArrow {
+    position: absolute;
+    right: 3%;
+    top: 60%;
+    width: 50px;
+    height: 68px;
+    background: url(../images/make_arraw.png) no-repeat center center;
+    background-size: 100% 100%;
+    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    animation: rightArrow 3s infinite;
+    -moz-animation: rightArrow 3s infinite;
+    -webkit-animation: rightArrow 3s infinite;
+    z-index: 8;
+}
+@keyframes rightArrow {0%,100% {transform: translateX(0) rotateY(180deg)}50% {transform: translateX(10px) rotateY(180deg)}}
+@-moz-keyframes rightArrow {0%,100% {-moz-transform: translateX(0) rotateY(180deg)}50% {-moz-transform: translateX(10px) rotateY(180deg)}}
+@-webkit-keyframes rightArrow {0%,100% {-webkit-transform: translateX(0) rotateY(180deg)}50% {-webkit-transform: translateX(10px) rotateY(180deg)}}
+
+/* 箭头结束 */
+
+/*style*/
+.make .style {
+    height: 168px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    background: url(../images/make_chooseStyle.png) no-repeat;
+    background-position:  0px center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 7;
+    animation: styleFloat 2s infinite;
+    -moz-animation: styleFloat 2s infinite;
+    -webkit-animation: styleFloat 2s infinite;
+    /*background-size: 600% 100%;*/
+}
+@media screen and (max-height: 565px) {
+    .make .style {
+        top: 53%;
+        zoom: 0.8;
+    }
+    .make .stonePlate {
+        bottom: 65px !important;
+    }
+}
+@keyframes styleFloat {0%,100% {transform: translateY(0px)}50% {transform: translateY(-10px)}}
+@-moz-keyframes styleFloat {0%,100% {-moz-transform: translateY(0px)}50% {-moz-transform: translateY(-10px)}}
+@-webkit-keyframes styleFloat {0%,100% {-webkit-transform: translateY(0px)}50% {-webkit-transform: translateY(-10px)}}
+/*style end*/
+
+.make .filling, .make .dough, .make .wellDone, .make .stonePlate {
+    z-index: 10;
+}
+.make .wellDone {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    bottom: 10px;
+    background: url(../images/make_wellDone.png) no-repeat;
+    background-size: 100% 100%;
+    margin-left: -18px;
+}
+.make .stonePlate {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 100px;
+    height: 24px;
+    background: url(../images/make_stonePlate.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin-left: -45px;
+}
+.make .stonePlate .shadow {
+    width: 100px;
+    height: 24px;
+    background: url(../images/make_stonePlate_shadow.png) no-repeat center center;
+    background-size: 100% 100%;
+    animation: stoneShadow 2s infinite;
+    -moz-animation: stoneShadow 2s infinite;
+    -webkit-animation: stoneShadow 2s infinite;
+}
+@keyframes stoneShadow {0%,100% {transform: scale(1)}50% {transform: scale(0.7)}}
+@-moz-keyframes stoneShadow {0%,100% {-moz-transform: scale(1)}50% {-moz-transform: scale(0.7)}}
+@-webkit-keyframes stoneShadow {0%,100% {-webkit-transform: scale(1)}50% {-webkit-transform: scale(0.7)}}
+
+.make .styleTip {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 8;
+    font-family: 'mini';
+}
+
+.make .filling {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    background: url(../images/make_filling.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.make .dough {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    background: url(../images/make_dough.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.make .filling.active {
+    bottom: 75%;
+    transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+    transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+}
+.make .dough.active {
+    bottom: 75%;
+    transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+}
+.make .fillingList {
+    position: absolute;
+    bottom: -75%;
+    border-top: 2px solid #000;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    height: 75%;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.make .doughList {
+    position: absolute;
+    bottom: -75%;
+    border-top: 2px solid #000;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    height: 75%;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.make .fillingList.active {
+    bottom: 0;
+}
+.make .doughList.active {
+    bottom: 0;
+}
+.make .fillingList .content {
+    height: 90%;
+    width: 90%;
+    position: relative;
+    top: 5%;
+    border-radius: 10px;
+    background-color: #fdf88d;
+    font-size: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.make .doughList .content {
+    height: 90%;
+    width: 90%;
+    position: relative;
+    top: 5%;
+    border-radius: 10px;
+    background-color: #fcc180;
+    font-size: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.make .fillingList .content .block {
+    height: 150px;
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+.make .doughList .content .block {
+    height: 50%;
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+.make .fillingList .content .block img {
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+}
+.make .doughList .content .block img {
+    width: 80%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+}
+.make .fillingList .radio, .make .doughList .radio {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 2px dashed #141414;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.make .fillingList .radio.active, .make .doughList .radio.active {
+    background-color: #769976;
+}
+/* make end */
+
+/* success start */
+.success {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    background:-webkit-linear-gradient(#707f9d ,#ad93ab);
+    background:-moz-linear-gradient(#707f9d ,#ad93ab);
+    background:-o-linear-gradient(#707f9d ,#ad93ab);
+    background:linear-gradient(#707f9d ,#ad93ab);
+}
+.success .table {
+    position: absolute;
+    bottom: 0;
+    height: 45%;
+    width: 100%;
+    background: url(../images/success_table.png) no-repeat center top;
+    background-size: cover;
+}
+.success .table .shadow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 22%;
+    height: 19px;
+    width: 75px;
+    background: url(../images/success_mooncake_shadow.png) no-repeat;
+    animation: tableShadow 3s infinite;
+    -moz-animation: tableShadow 3s infinite;
+    -webkit-animation: tableShadow 3s infinite;
+}
+@keyframes tableShadow{0%,100% {transform: scale(0.6)}50% {transform: scale(1)}}
+@-moz-keyframes tableShadow{0%,100% {-moz-transform: scale(0.6)}50% {-moz-transform: scale(1)}}
+@-webkit-keyframes tableShadow{0%,100% {-webkit-transform: scale(0.6)}50% {-webkit-transform: scale(1)}}
+
+.success .title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    top: 15%;
+    text-align: center;
+    font-family: 'mini';
+    color: #fff;
+}
+.success .package {
+    position: absolute;
+    left: 10px;
+    bottom: 30%;
+    height: 93px;
+    width: 75px;
+    background: url(../images/success_mooncakePackage.png) no-repeat center center;
+}
+.success .backLight {
+    position: absolute;
+    top: 20%;
+    height: 50%;
+    width: 100%;
+    background: url(../images/success_backLight.png) no-repeat center center;
+    background-size: auto 100%;
+    animation: backLight 3s infinite;
+    -moz-animation: backLight 3s infinite;
+    -webkit-animation: backLight 3s infinite;
+}
+.success .mooncake {
+    position: absolute;
+    top: 30%;
+    height: 30%;
+    width: 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: mooncakeFloat 3s infinite;
+    -moz-animation: mooncakeFloat 3s infinite;
+    -webkit-animation: mooncakeFloat 3s infinite;
+}
+@keyframes mooncakeFloat {0%,100%{transform: translateY(0)}50%{transform: translateY(10px)}}
+@-moz-keyframes mooncakeFloat {0%,100%{-moz-transform: translateY(0)}50%{-moz-transform: translateY(10px)}}
+@-webkit-keyframes mooncakeFloat {0%,100%{-webkit-transform: translateY(0)}50%{-webkit-transform: translateY(10px)}}
+.success .words {
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    z-index: 9999;
+}
+.success .words:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -60px;
+    width: 0px;
+    content: "";
+    border: 30px solid rgba(255, 255, 255, 0.5);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+@media screen and (max-height:400px) {
+    .success .words:after {
+        display: none;
+    }
+}
+.success .words textarea {
+    width: 90%;
+    position: relative;
+    height: 80px;
+    top: 10px;
+    border-radius: 5px;
+    border: 0;
+    left: 5%;
+    -webkit-appearance: none;
+    font-size: 16px;
+    color: #898787;
+}
+.success .words textarea:focus {
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.success .ok {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background-color: #a4dffb;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    text-align:  center;
+    font-family: 'mini';
+}
+.success .wordsNum {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+.success table {
+    width: 80%;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+}
+.success td {
+    padding: 10px;
+    width: 33.333%;
+    text-align: center;
+}
+.success td span {
+    font-size: 15px;
+    font-family: 'mini';
+}
+@media screen and (min-width:370px) {
+    .success td span {
+        font-size: 18px;
+    }
+}
+.success td img {
+    width: 100%;
+}
+/* success end */
+
+.orientation-landscape {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url(../images/orientation_landscape.png) no-repeat center center;
+    background-size: auto 50%;
+    background-color: #536173;
+}
+.orientation-landscape span {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    font-family: 'Microsoft yahei';
+}
+
+/* control */
+.loading {
+    /*display: none;*/
+}
+.home {
+    display: none;
+}
+.bite {
+    display: none;
+}
+.make {
+    display: none;
+}
+.success {
+    display: none;
+}
